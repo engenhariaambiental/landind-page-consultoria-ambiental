@@ -1469,58 +1469,47 @@
             </p>
           </div>
         </div>
-        <div class="form-box fade-in">
-          <h3>Solicitar diagnóstico gratuito</h3>
-          <p>Preencha os dados abaixo e entraremos em contato.</p>
-          <form onsubmit="event.preventDefault(); alert('Obrigado! Entraremos em contato em breve.');">
-            <div class="form-group">
-              <label for="nome">Nome completo</label>
-              <input type="text" id="nome" name="nome" required placeholder="Seu nome">
-            </div>
-            <div class="form-group">
-              <label for="telefone">WhatsApp / Telefone</label>
-              <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" required placeholder="seu@email.com">
-            </div>
-            <div class="form-group">
-              <label for="tipo">Tipo de atividade</label>
-              <select id="tipo" name="tipo" required>
-                <option value="">Selecione...</option>
-                <option value="industria">Indústria</option>
-                <option value="rural">Propriedade Rural</option>
-                <option value="saude">Serviços de Saúde</option>
-                <option value="comercio">Comércio / Serviços</option>
-                <option value="publico">Órgão Público</option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="servico">Serviço de interesse</label>
-              <select id="servico" name="servico" required>
-                <option value="">Selecione...</option>
-                <option value="pgrs">PGRS</option>
-                <option value="pgrss">PGRSS</option>
-                <option value="renovacao-lo">Renovação de LO</option>
-                <option value="efluentes">Tratamento de Efluentes</option>
-                <option value="car">Cadastro Ambiental Rural (CAR)</option>
-                <option value="educacao">Educação Ambiental</option>
-                <option value="mapas">Mapas Temáticos</option>
-                <option value="licenciamento">Licenciamento (LP/LI/LO)</option>
-                <option value="outro">Outro / Não sei</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mensagem">Conte-nos um pouco sobre sua necessidade</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente o que você precisa regularizar..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-laranja">Enviar solicitação</button>
-            <p style="font-size: 0.75rem; color: #999; margin-top: 12px; text-align: center;">
-              Seus dados estão protegidos. Não enviamos spam.
-            </p>
-          </form>
+        <div 
+            <form action="https://api.web3forms.com/submit" method="POST">
+  <!-- Sua chave única do Web3Forms -->
+  <input type="hidden" name="access_key" value="1886bf55-ff54-41c0-9256-2f5332c6adbe" />
+
+  <!-- Assunto do e-mail de notificação que você vai receber -->
+  <input type="hidden" name="subject" value="Novo contato pelo site - Consultoria Ambiental" />
+
+  <!-- Redireciona o visitante de volta para o seu site após clicar em enviar -->
+  <input type="hidden" name="redirect" value="https://engenhariaambiental.github.io/landind-page-consultoria-ambiental/" />
+
+  <!-- Campos do seu formulário -->
+  <label for="nome">Nome completo</label>
+  <input type="text" id="nome" name="Nome" placeholder="Seu nome" required />
+
+  <label for="telefone">WhatsApp / Telefone</label>
+  <input type="tel" id="telefone" name="Telefone" placeholder="(00) 00000-0000" required />
+
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="Email" placeholder="seu@email.com" required />
+
+  <label for="atividade">Tipo de atividade</label>
+  <select id="atividade" name="Tipo de Atividade" required>
+    <option value="" disabled selected>Selecione...</option>
+    <option value="Pessoa Física">Pessoa Física</option>
+    <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+  </select>
+
+  <label for="servico">Serviço de interesse</label>
+  <select id="servico" name="Serviço de Interesse" required>
+    <option value="" disabled selected>Selecione...</option>
+    <option value="Regularização">Regularização</option>
+    <option value="Consultoria">Consultoria</option>
+  </select>
+
+  <label for="mensagem">Conte-nos um pouco sobre sua necessidade</label>
+  <textarea id="mensagem" name="Necessidade" placeholder="Descreva brevemente..."></textarea>
+
+  <button type="submit">Enviar solicitação</button>
+</form>
+          
         </div>
       </div>
     </div>
