@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caetano Santos - Consultoria Ambiental</title>
+  <meta name="description" content="Consultoria ambiental especializada em licenciamento, PGRS, CAR, tratamento de efluentes e regularização fundiária. Fale com um especialista.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-principal: #2E8B57;
+      --verde-escuro: #123822;
+      --verde-claro: #E8F3EA;
+      --verde-hover: #1F6D3C;
+      --preto: #111111;
+      --preto-suave: #1A1A1A;
+      --branco: #FFFFFF;
+      --laranja: #F2801E;
+      --laranja-hover: #FF9800;
+      --cinza: #F5F5F5;
+      --cinza-texto: #555555;
+      --borda: #E0E0E0;
+      --sombra: 0 4px 24px rgba(0,0,0,0.08);
+      --sombra-card: 0 8px 32px rgba(18,56,34,0.10);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transicao: all 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--preto);
+      background: var(--branco);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    a { text-decoration: none; color: inherit; transition: var(--transicao); }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; border-radius: var(--radius); }
+    button { cursor: pointer; border: none; font-family: inherit; transition: var(--transicao); touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    a, .btn, .slider-arrow, .slider-dot, .faq-question, .menu-toggle { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--borda);
+      transition: var(--transicao);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--verde-escuro);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid var(--verde-principal);
+    }
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .nav-desktop { display: flex; align-items: center; gap: 32px; }
+
+    .nav-desktop a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--preto-suave);
+      position: relative;
+    }
+
+    .nav-desktop a:hover { color: var(--verde-principal); }
+    .nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--verde-principal);
+      transition: var(--transicao);
+    }
+    .nav-desktop a:hover::after { width: 100%; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn-laranja {
+      background: var(--laranja);
+      color: var(--branco);
+    }
+    .btn-laranja:hover { background: var(--laranja-hover); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(242,128,30,0.3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--verde-escuro);
+      border: 2px solid var(--verde-principal);
+    }
+    .btn-outline:hover { background: var(--verde-principal); color: var(--branco); }
+
+    .btn-branco {
+      background: var(--branco);
+      color: var(--verde-escuro);
+    }
+    .btn-branco:hover { background: var(--verde-claro); }
+
+    .btn-escuro {
+      background: var(--verde-escuro);
+      color: var(--branco);
+    }
+    .btn-escuro:hover { background: var(--verde-hover); }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      padding: 4px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--preto);
+      transition: var(--transicao);
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      z-index: 998;
+      background: var(--branco);
+      border-bottom: 1px solid var(--borda);
+      padding: 24px;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--sombra);
+    }
+    .nav-mobile.active { display: flex; }
+    .nav-mobile a { font-weight: 500; padding: 8px 0; border-bottom: 1px solid var(--borda); }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 140px 0 60px;
+      background: linear-gradient(135deg, #0d2618 0%, #1a3d26 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg-slider {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-bg-slider .hero-slider-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hero-bg-slider .hero-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-slider .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-bg-slider::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 31, 18, 0.5);
+      z-index: 2;
+    }
+
+
+
+    .hero .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1100px;
+    }
+    .hero-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--laranja);
+      box-shadow: 0 8px 40px rgba(242,128,30,0.35), 0 0 0 4px rgba(242,128,30,0.15);
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--branco);
+      margin-bottom: 20px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .hero-content h1 span { color: #A8E6CF; }
+
+    .hero-content .tag {
+      background: rgba(255,255,255,0.2);
+      color: var(--branco);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 32px;
+      max-width: 90%;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    }
+
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .hero-btns .btn-laranja {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    .hero-btns .btn-outline {
+      border-color: rgba(255,255,255,0.6);
+      color: var(--branco);
+    }
+    .hero-btns .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      color: var(--branco);
+      border-color: var(--branco);
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.85);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: var(--transicao);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .slider-arrow:hover {
+      background: var(--branco);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .slider-arrow.prev { left: 24px; }
+    .slider-arrow.next { right: 24px; }
+    .slider-arrow svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--verde-escuro);
+    }
+    .slider-dots {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transicao);
+    }
+    .slider-dot.active {
+      background: var(--branco);
+      transform: scale(1.2);
+    }
+
+    .badge-hero {
+      position: absolute;
+      bottom: 24px; left: 24px;
+      background: var(--branco);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--sombra);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .badge-hero .icon {
+      width: 36px; height: 36px;
+      background: var(--verde-claro);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    /* ===== SEÇÕES COMUNS ===== */
+    .section { padding: 80px 0; }
+    .section-clara { background: var(--verde-claro); }
+    .section-escura { background: var(--verde-escuro); color: var(--branco); }
+    .section-preto { background: var(--preto); color: var(--branco); }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 56px;
+    }
+    .section-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      color: var(--verde-escuro);
+    }
+    .section-escura .section-header h2,
+    .section-preto .section-header h2 { color: var(--branco); }
+
+    .section-header p {
+      color: var(--cinza-texto);
+      font-size: 1.05rem;
+    }
+    .section-escura .section-header p,
+    .section-preto .section-header p { color: rgba(255,255,255,0.7); }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--verde-claro);
+      color: var(--verde-principal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .section-escura .tag,
+    .section-preto .tag { background: rgba(255,255,255,0.1); color: var(--branco); }
+
+    /* ===== BARRA CONFIANÇA ===== */
+    .trust-bar {
+      background: var(--branco);
+      border-bottom: 1px solid var(--borda);
+      padding: 32px 0;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .trust-item h4 {
+      font-size: 1.3rem;
+      color: var(--laranja);
+      margin-bottom: 4px;
+    }
+    .trust-item p {
+      font-size: 0.85rem;
+      color: var(--cinza-texto);
+    }
+
+    /* ===== SERVIÇOS ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #0d1f12;
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--sombra);
+      transition: var(--transicao);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 32px rgba(255,255,255,0.12), 0 0 0 1px rgba(255,255,255,0.15), 0 0 32px rgba(242, 128, 30, 0.55);
+      border-color: rgba(242, 128, 30, 0.6);
+      animation: cardShake 0.4s ease-in-out;
+    }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: var(--branco);
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--branco);
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .service-card .link {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #FFD180;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-card .link:hover { color: var(--branco); }
+    .service-card .link::after {
+      content: '→';
+      transition: var(--transicao);
+    }
+    .service-card .link:hover::after { transform: translateX(4px); }
+
+    /* ===== POR QUE CONTRATAR ===== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .why-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--sombra-card);
+    }
+    .why-image img {
+      width: 100%; height: 400px;
+      object-fit: cover;
+    }
+    .why-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--verde-escuro);
+    }
+    .why-content > p {
+      color: var(--cinza-texto);
+      margin-bottom: 28px;
+    }
+    .why-list { display: flex; flex-direction: column; gap: 16px; }
+    .why-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .why-item .icon {
+      min-width: 40px; height: 40px;
+      background: var(--verde-claro);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--verde-principal);
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+    .why-item h4 { font-size: 1rem; margin-bottom: 4px; }
+    .why-item p { font-size: 0.9rem; color: var(--cinza-texto); }
+
+    /* ===== SOBRE ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .about-image {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .about-image img {
+      width: 100%; height: 440px;
+      object-fit: cover;
+    }
+    .about-portrait {
+      width: 280px; height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--branco);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .about-image .overlay-badge {
+      position: absolute;
+      bottom: 24px; right: 24px;
+      background: var(--laranja);
+      color: var(--branco);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: var(--sombra);
+    }
+    .about-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--verde-escuro);
+    }
+    .about-content > p {
+      color: var(--cinza-texto);
+      margin-bottom: 24px;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .about-feature .check {
+      width: 22px; height: 22px;
+      background: var(--verde-principal);
+      color: var(--branco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== COMO TRABALHAMOS ===== */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .process-card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--sombra);
+      position: relative;
+      transition: var(--transicao);
+    }
+    .process-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(242, 128, 30, 0.25), 0 0 0 1px rgba(242, 128, 30, 0.15);
+      animation: cardShake 0.4s ease-in-out;
+    }
+    .process-card::after {
+      content: '';
+      position: absolute;
+      top: 50%; right: -28px;
+      width: 32px; height: 2px;
+      background: var(--verde-principal);
+      opacity: 0.3;
+    }
+    .process-card:last-child::after { display: none; }
+
+    .process-number {
+      width: 48px; height: 48px;
+      background: var(--verde-principal);
+      color: var(--branco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin: 0 auto 16px;
+    }
+    .process-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--verde-escuro);
+    }
+    .process-card p {
+      font-size: 0.85rem;
+      color: var(--cinza-texto);
+    }
+
+    /* ===== DEPOIMENTOS ===== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--sombra);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; left: 20px;
+      font-size: 4rem;
+      color: var(--verde-claro);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .testimonial-card p {
+      font-size: 0.95rem;
+      color: var(--cinza-texto);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      padding-top: 16px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-author .avatar {
+      width: 44px; height: 44px;
+      background: var(--verde-claro);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--verde-principal);
+      font-size: 0.85rem;
+    }
+    .testimonial-author h4 { font-size: 0.9rem; margin-bottom: 2px; }
+    .testimonial-author span { font-size: 0.8rem; color: var(--cinza-texto); }
+
+    /* ===== BLOG ===== */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: var(--transicao);
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: var(--sombra-card); }
+    .blog-card img {
+      width: 100%; height: 200px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .blog-card-content { padding: 24px; }
+    .blog-card .date {
+      font-size: 0.75rem;
+      color: var(--verde-principal);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .blog-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: var(--verde-escuro);
+    }
+    .blog-card p {
+      font-size: 0.9rem;
+      color: var(--cinza-texto);
+      margin-bottom: 16px;
+    }
+    .blog-card .read-more {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--verde-principal);
+    }
+    .blog-card .read-more:hover { color: var(--laranja); }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      background: var(--branco);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      border: 1px solid var(--borda);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: left;
+      color: var(--verde-escuro);
+    }
+    .faq-question .icon-faq {
+      width: 24px; height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transicao);
+      color: var(--verde-principal);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .faq-item.active .icon-faq { transform: rotate(45deg); color: var(--laranja); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      color: var(--cinza-texto);
+      font-size: 0.95rem;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; }
+
+    /* ===== CTA FINAL ===== */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .cta-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .cta-content > p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+    }
+    .cta-features { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+    .cta-feature .check {
+      width: 28px; height: 28px;
+      background: var(--laranja);
+      color: var(--branco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .form-box {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--sombra);
+    }
+    .form-box h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--verde-escuro);
+    }
+    .form-box > p {
+      font-size: 0.9rem;
+      color: var(--cinza-texto);
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--preto-suave);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--borda);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transicao);
+      color: var(--preto);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--verde-principal);
+      box-shadow: 0 0 0 3px rgba(46,139,87,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-box .btn { width: 100%; margin-top: 8px; padding: 14px; font-size: 1rem; }
+
+    /* ===== FOOTER ===== */
+    .footer { padding: 60px 0 24px; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      color: var(--branco);
+    }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-col ul li a:hover { color: var(--laranja); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+    .footer-bottom a:hover { color: var(--laranja); }
+
+    .social-links { display: flex; gap: 12px; }
+    .social-links a {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--branco);
+      font-size: 0.9rem;
+      transition: var(--transicao);
+    }
+    .social-links a:hover { background: var(--laranja); transform: translateY(-2px); }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 999;
+      width: 56px; height: 56px;
+      background: #25D366;
+      color: var(--branco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      font-size: 1.6rem;
+      transition: var(--transicao);
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+      70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    @keyframes cardShake {
+      0% { transform: translateY(-6px) rotate(0deg); }
+      25% { transform: translateY(-6px) rotate(0.6deg); }
+      50% { transform: translateY(-6px) rotate(-0.6deg); }
+      75% { transform: translateY(-6px) rotate(0.3deg); }
+      100% { transform: translateY(-6px) rotate(0deg); }
+    }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .about-bg-zoom {
+      animation: slowZoom 20s ease-in-out infinite;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 999;
+      width: 48px;
+      height: 48px;
+      background: var(--laranja);
+      color: var(--branco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      font-size: 1.3rem;
+      transition: var(--transicao);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      text-decoration: none;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: var(--laranja-hover);
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(242,128,30,0.4);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .container { padding: 0 20px; }
+      .hero-grid,
+      .why-grid,
+      .about-grid,
+      .cta-grid { grid-template-columns: 1fr; }
+      .hero-image { order: -1; }
+      .hero-image img { width: 220px; height: 220px; }
+      .services-grid,
+      .testimonials-grid,
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-card::after { display: none; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .why-image img,
+      .about-image img { height: 300px; }
+      .slider-arrow.prev { left: 12px; }
+      .slider-arrow.next { right: 12px; }
+      .badge-hero { display: none; }
+      .section-header h2 { font-size: 1.9rem; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      .nav-desktop { display: none; }
+      .menu-toggle { display: flex; }
+      .header-inner { height: 64px; }
+      .logo { font-size: 1.15rem; }
+      .hero { padding: 100px 0 48px; min-height: auto; }
+      .hero-content h1 { font-size: 1.7rem; line-height: 1.25; }
+      .hero-content p { font-size: 1rem; max-width: 100%; }
+      .hero-grid { gap: 28px; }
+      .hero-btns { flex-direction: column; gap: 12px; }
+      .hero-btns .btn { width: 100%; padding: 14px 20px; font-size: 1rem; }
+      .services-grid,
+      .testimonials-grid,
+      .blog-grid,
+      .process-grid,
+      .trust-grid { grid-template-columns: 1fr; }
+      .about-features { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .section { padding: 56px 0; }
+      .section-header { margin-bottom: 40px; }
+      .section-header h2 { font-size: 1.6rem; }
+      .section-header p { font-size: 1rem; }
+      .form-box { padding: 24px; }
+      .cta-grid { gap: 32px; }
+      .cta-content h2 { font-size: 1.7rem; }
+      .slider-arrow { width: 36px; height: 36px; }
+      .slider-arrow svg { width: 16px; height: 16px; }
+      .slider-dots { bottom: 16px; }
+      .slider-dot { width: 8px; height: 8px; }
+      .trust-bar { padding: 24px 0; }
+      .trust-item h4 { font-size: 1.1rem; }
+      .service-card { padding: 24px; }
+      .process-card { padding: 24px 20px; }
+      .testimonial-card { padding: 24px; }
+      .blog-card-content { padding: 20px; }
+      .faq-question { padding: 16px 20px; font-size: 0.95rem; }
+      .faq-answer-inner { padding: 0 20px 16px; }
+      .form-group input,
+      .form-group select,
+      .form-group textarea { padding: 10px 14px; font-size: 16px; }
+      .whatsapp-float { width: 48px; height: 48px; font-size: 1.3rem; bottom: 16px; right: 16px; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+      .footer { padding: 48px 0 20px; }
+      .why-content h2,
+      .about-content h2 { font-size: 1.6rem; }
+      .about-portrait { width: 220px; height: 220px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 12px; }
+      .logo { font-size: 1rem; }
+      .hero { padding: 90px 0 40px; }
+      .hero-content h1 { font-size: 1.45rem; }
+      .hero-content p { font-size: 0.95rem; }
+      .hero-image img { width: 180px; height: 180px; }
+      .back-to-top { width: 40px; height: 40px; font-size: 1.1rem; bottom: 16px; left: 16px; }
+      .section-header h2 { font-size: 1.4rem; }
+      .why-content h2,
+      .about-content h2,
+      .cta-content h2 { font-size: 1.4rem; }
+      .btn { padding: 12px 18px; font-size: 0.9rem; }
+      .service-card h3 { font-size: 1rem; }
+      .service-card p { font-size: 0.85rem; }
+      .process-card h3 { font-size: 1rem; }
+      .testimonial-card p { font-size: 0.9rem; }
+      .blog-card h3 { font-size: 1rem; }
+      .faq-question { font-size: 0.9rem; padding: 14px 16px; }
+      .faq-answer-inner { font-size: 0.9rem; padding: 0 16px 14px; }
+      .form-box { padding: 20px; }
+      .form-box h3 { font-size: 1.15rem; }
+      .cta-feature { font-size: 0.9rem; }
+      .trust-item h4 { font-size: 1rem; }
+      .trust-item p { font-size: 0.8rem; }
+      .section { padding: 48px 0; }
+      .footer-brand p { font-size: 0.85rem; }
+      .slider-arrow { display: none; }
+    }
+
+    @media (min-width: 769px) {
+      .nav-mobile { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        Caetano Santos - Consultoria Ambiental
+      </a>
+      <nav class="nav-desktop">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#contato" class="btn btn-laranja">Fale com um especialista</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#contato" class="btn btn-laranja">Fale com um especialista</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-slider" id="heroSlider">
+      <div class="hero-slider-track" id="heroSliderTrack">
+        <div class="hero-slide"><img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/618646a9000d466ca093999350e2e4f6.jpg" alt="Mudinha brotando de solo rachado - resiliência ambiental"></div>
+        <div class="hero-slide"><img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/6ea7ecabc898f1efcbf7f8029d7935e7.jpg" alt="Gaivota voando sobre o oceano - liberdade e natureza"></div>
+        <div class="hero-slide"><img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/b063b75be02c497acb0b971961f04b34.jpg" alt="Lagarto em tronco de árvore - fauna nativa"></div>
+        <div class="hero-slide"><img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/c341af663ab107e31579748043a898cb.jpg" alt="Beija-flor verde em galho - biodiversidade"></div>
+      </div>
+      <button class="slider-arrow prev" id="sliderPrev" aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button class="slider-arrow next" id="sliderNext" aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+      </button>
+      <div class="slider-dots" id="sliderDots">
+        <button class="slider-dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="slider-dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="slider-dot" data-index="2" aria-label="Slide 3"></button>
+        <button class="slider-dot" data-index="3" aria-label="Slide 4"></button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content fade-in">
+          <span class="tag">Consultoria Ambiental</span>
+          <h1>Regularize sua empresa ou propriedade com <span>segurança jurídica</span></h1>
+          <p>Elaboramos licenças, planos de resíduos, CAR e projetos de efluentes com acompanhamento técnico do início ao fim. Você não precisa entender de legislação — precisa de quem entenda por você.</p>
+          <div class="hero-btns">
+            <a href="#contato" class="btn btn-laranja">Solicitar diagnóstico gratuito</a>
+            <a href="#servicos" class="btn btn-outline">Conhecer serviços</a>
+          </div>
+        </div>
+        <div class="hero-image fade-in">
+          <img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/7f4d18547ba7d1f097648c9f788df5d4.jpg" alt="Caetano Santos - Consultor Ambiental">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA CONFIANÇA -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h4>Conformidade</h4>
+          <p>Atuação alinhada à legislação ambiental vigente</p>
+        </div>
+        <div class="trust-item">
+          <h4>Agilidade</h4>
+          <p>Protocolo e acompanhamento junto aos órgãos</p>
+        </div>
+        <div class="trust-item">
+          <h4>Resposta</h4>
+          <p>Atendimento em até 24 horas úteis</p>
+        </div>
+        <div class="trust-item">
+          <h4>Experiência</h4>
+          <p>Equipe multidisciplinar e credenciada</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="tag">Serviços</span>
+        <h2>Soluções ambientais para empresas, propriedades rurais e órgãos públicos</h2>
+        <p>Cada serviço é conduzido por profissionais técnicos com acompanhamento junto aos órgãos ambientais, do diagnóstico até a entrega final.</p>
+      </div>
+      <div class="services-grid">
+        <!-- 1 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">📋</div>
+          <h3>PGRS — Plano de Gerenciamento de Resíduos Sólidos</h3>
+          <p>Documento técnico que planeja como sua empresa gera, separa, armazena, transporta e destina corretamente seus resíduos sólidos. Exigido pela Política Nacional de Resíduos Sólidos para obtenção e renovação de licenças.</p>
+          <a href="#contato" class="link">Solicitar PGRS</a>
+        </div>
+        <!-- 2 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🏥</div>
+          <h3>PGRSS — Resíduos de Serviços de Saúde</h3>
+          <p>Versão específica do PGRS para clínicas, hospitais, laboratórios e consultórios. Garantimos manejo, acondicionamento e destinação diferenciados conforme exigências da ANVISA e órgãos ambientais.</p>
+          <a href="#contato" class="link">Solicitar PGRSS</a>
+        </div>
+        <!-- 3 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🔄</div>
+          <h3>Renovação de Licença de Operação (LO)</h3>
+          <p>A Licença de Operação tem prazo de validade. Operar com licença vencida é passível de multa e embargo. Cuidamos do calendário de vencimentos e protocolamos a renovação com antecedência.</p>
+          <a href="#contato" class="link">Renovar LO</a>
+        </div>
+        <!-- 4 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">💧</div>
+          <h3>Tratamento de Efluentes</h3>
+          <p>Projeto e acompanhamento de sistemas que tratam água residual antes do descarte. O lançamento de efluente fora dos padrões é uma das infrações mais penalizadas pela fiscalização ambiental.</p>
+          <a href="#contato" class="link">Projeto de efluentes</a>
+        </div>
+        <!-- 5 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🌿</div>
+          <h3>Cadastro Ambiental Rural (CAR)</h3>
+          <p>Registro obrigatório para todos os imóveis rurais. Sem o CAR, o produtor não acessa crédito rural e fica sujeito a restrições. Fazemos o levantamento georreferenciado e o cadastro completo.</p>
+          <a href="#contato" class="link">Regularizar CAR</a>
+        </div>
+        <!-- 6 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🎓</div>
+          <h3>Palestras e Workshops de Educação Ambiental</h3>
+          <p>Capacitações para empresas, escolas, condomínios e comunidades sobre práticas sustentáveis, legislação e gestão de resíduos. Fortalece a imagem institucional e reduz passivos ambientais internos.</p>
+          <a href="#contato" class="link">Agendar capacitação</a>
+        </div>
+        <!-- 7 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">🗺️</div>
+          <h3>Mapas Temáticos</h3>
+          <p>Produtos cartográficos (uso do solo, hidrografia, APPs, reserva legal, geoprocessamento) que embasam projetos e processos de licenciamento. Exigência técnica em praticamente todos os processos.</p>
+          <a href="#contato" class="link">Solicitar mapas</a>
+        </div>
+        <!-- 8 -->
+        <div class="service-card fade-in">
+          <div class="service-icon">📜</div>
+          <h3>Licenciamento Ambiental (LP, LI, LO)</h3>
+          <p>Conduzimos seu processo em três etapas: Licença Prévia (viabilidade), Licença de Instalação (autorização para construir) e Licença de Operação (autorização para operar). Pré-requisito legal para empreendimentos com impacto ambiental.</p>
+          <a href="#contato" class="link">Iniciar licenciamento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE CONTRATAR -->
+  <section class="section section-clara" id="diferenciais">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-image fade-in">
+          <img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/c610f642b57687676577594503091b8a.jpg" alt="Documentação e processos de regularização ambiental">
+        </div>
+        <div class="why-content fade-in">
+          <span class="tag">Por que contratar uma consultoria especializada</span>
+          <h2>Evite multas, embargos e perda de tempo com processos parados</h2>
+          <p>A legislação ambiental é complexa e muda constantemente. Tentar resolver sozinho ou com profissionais sem experiência específica pode resultar em exigências repetidas, retrabalho e risco de autuação.</p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="icon">⚠️</div>
+              <div>
+                <h4>Risco de multas e embargo</h4>
+                <p>Operar sem licença ou com documentação vencida expõe sua empresa ou propriedade a penalidades que podem paralisar as atividades.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="icon">⏱️</div>
+              <div>
+                <h4>Tempo perdido em órgãos públicos</h4>
+                <p>Processos mal conduzidos geram exigências técnicas que atrasam meses a liberação. Conhecemos os trâmites e antecipamos os requisitos.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="icon">🛡️</div>
+              <div>
+                <h4>Segurança jurídica e tranquilidade</h4>
+                <p>Com a documentação ambiental em dia, você foca no seu negócio enquanto cuidamos da conformidade legal e das renovações.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="icon">💰</div>
+              <div>
+                <h4>Acesso a financiamentos e programas</h4>
+                <p>Propriedades rurais com CAR ativo e empresas licenciadas têm acesso facilitado a linhas de crédito e incentivos ambientais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre" style="position: relative; overflow: hidden; padding: 100px 0;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+      <img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/5bcc5d1c0eca3cd30e86c9eb5893cd6a.jpg" alt="Vista aérea de floresta e rio" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.45);" class="about-bg-zoom">
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="about-grid">
+        <div class="about-image fade-in" style="text-align: center;">
+          <img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/7f4d18547ba7d1f097648c9f788df5d4.jpg" alt="Caetano Santos - Consultor Ambiental" class="about-portrait">
+        </div>
+        <div class="about-content fade-in" style="color: var(--branco);">
+          <span class="tag" style="background: rgba(255,255,255,0.15); color: var(--branco);">Sobre mim</span>
+          <h2 style="color: var(--branco); font-size: 2.2rem; margin-bottom: 20px;">Caetano Santos</h2>
+          <p style="color: rgba(255,255,255,0.9); margin-bottom: 16px;">Caetano Santos é Engenheiro Sanitarista e Ambiental graduado pela Universidade Federal do Recôncavo da Bahia (UFRB) e registrado no CREA. Possui perfil analítico e foco na conformidade socioambiental, com experiência técnica adquirida no órgão ambiental estadual (INEMA) na instrução de processos de licenciamento, fiscalização e auditoria do cumprimento de condicionantes.</p>
+          <p style="color: rgba(255,255,255,0.9);">Experiência na elaboração e execução de Planos de Gerenciamento de Resíduos Sólidos (PGRS), Programas de Educação Ambiental para Trabalhadores (PEAT/DDS) e aplicação de diretrizes ISO 14001, combina visão regulatória e prática operacional com domínio de ferramentas analíticas como QGIS, AutoCAD e metodologias ágeis de gestão. Atuo junto a outros profissionais da área para cumprimento dos objetivos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO TRABALHAMOS -->
+  <section class="section section-clara">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="tag">Processo</span>
+        <h2>Como trabalhamos — 4 passos claros</h2>
+        <p>Tiramos a sensação de "caixa-preta" do processo ambiental. Você acompanha cada etapa com clareza.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card fade-in">
+          <div class="process-number">1</div>
+          <h3>Diagnóstico</h3>
+          <p>Entendemos sua atividade, documentação atual e pendências. Identificamos o caminho mais rápido para a regularização.</p>
+        </div>
+        <div class="process-card fade-in">
+          <div class="process-number">2</div>
+          <h3>Elaboração / Protocolo</h3>
+          <p>Preparamos o documento técnico ou projeto específico e protocolamos junto ao órgão ambiental competente.</p>
+        </div>
+        <div class="process-card fade-in">
+          <div class="process-number">3</div>
+          <h3>Acompanhamento</h3>
+          <p>Respondemos exigências, ajustamos detalhes e acompanhamos o processo até a análise final do órgão.</p>
+        </div>
+        <div class="process-card fade-in">
+          <div class="process-number">4</div>
+          <h3>Entrega / Renovação</h3>
+          <p>Entregamos a licença ou documento aprovado e cuidamos do calendário de renovações para você não perder prazos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="tag">Dúvidas Frequentes</span>
+        <h2>Tire suas principais dúvidas sobre o processo</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Quanto tempo leva para emitir uma Licença de Operação?
+            <span class="icon-faq">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">O prazo varia conforme o tipo de empreendimento, a complexidade ambiental e o órgão licenciador. Empreendimentos de baixo impacto podem levar de 30 a 90 dias, enquanto atividades de maior complexidade podem ultrapassar 180 dias. O acompanhamento técnico correto evita exigências que atrasam o processo.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            O que acontece se minha empresa operar sem o PGRS?
+            <span class="icon-faq">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">A ausência do PGRS (Plano de Gerenciamento de Resíduos Sólidos) pode resultar na negativa ou suspensão da licença de operação, além de autuações em fiscalizações. O plano é exigência legal da Política Nacional de Resíduos Sólidos e deve ser mantido atualizado.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            É obrigatório o CAR para todo imóvel rural?
+            <span class="icon-faq">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sim. O Cadastro Ambiental Rural é obrigatório para todos os imóveis rurais, independentemente do tamanho. Sem o CAR ativo, o proprietário não consegue acessar financiamentos rurais, programas ambientais e pode estar sujeito a restrições e autuações.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Meu efluente está fora dos padrões. Qual o primeiro passo?
+            <span class="icon-faq">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">O primeiro passo é realizar uma análise completa da caracterização do efluente e do sistema atual de tratamento. A partir dos resultados, elaboramos um projeto técnico adequado às características do seu efluente e às exigências do órgão ambiental, buscando soluções economicamente viáveis.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Vocês atendem em qual região?
+            <span class="icon-faq">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Atuamos de forma presencial e remota, dependendo da necessidade do projeto. Entre em contato para verificar a viabilidade de atendimento na sua região.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section section-escura" id="contato">
+    <div class="container">
+      <div class="cta-grid">
+        <div class="cta-content fade-in">
+          <span class="tag">Fale com um Especialista</span>
+          <h2>Diagnóstico gratuito para entender sua situação</h2>
+          <p>Preencha o formulário ou envie uma mensagem pelo WhatsApp. Respondemos em até 24 horas úteis com uma análise inicial do seu caso.</p>
+          <div class="cta-features">
+            <div class="cta-feature"><div class="check">✓</div> Análise inicial sem compromisso</div>
+            <div class="cta-feature"><div class="check">✓</div> Orçamento transparente</div>
+            <div class="cta-feature"><div class="check">✓</div> Acompanhamento até a entrega</div>
+          </div>
+          <div style="margin-top: 24px;">
+            <a href="https://wa.me/5575999867956" target="_blank" class="btn btn-laranja" style="margin-bottom: 12px;">
+              📱 Chamar no WhatsApp
+            </a>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 8px;">
+              (75) 9 9986-7956 | eng.esaca@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="form-box fade-in">
+          <h3>Solicitar diagnóstico gratuito</h3>
+          <p>Preencha os dados abaixo e entraremos em contato.</p>
+          <form onsubmit="event.preventDefault(); alert('Obrigado! Entraremos em contato em breve.');">
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+              <label for="telefone">WhatsApp / Telefone</label>
+              <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required placeholder="seu@email.com">
+            </div>
+            <div class="form-group">
+              <label for="tipo">Tipo de atividade</label>
+              <select id="tipo" name="tipo" required>
+                <option value="">Selecione...</option>
+                <option value="industria">Indústria</option>
+                <option value="rural">Propriedade Rural</option>
+                <option value="saude">Serviços de Saúde</option>
+                <option value="comercio">Comércio / Serviços</option>
+                <option value="publico">Órgão Público</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="servico">Serviço de interesse</label>
+              <select id="servico" name="servico" required>
+                <option value="">Selecione...</option>
+                <option value="pgrs">PGRS</option>
+                <option value="pgrss">PGRSS</option>
+                <option value="renovacao-lo">Renovação de LO</option>
+                <option value="efluentes">Tratamento de Efluentes</option>
+                <option value="car">Cadastro Ambiental Rural (CAR)</option>
+                <option value="educacao">Educação Ambiental</option>
+                <option value="mapas">Mapas Temáticos</option>
+                <option value="licenciamento">Licenciamento (LP/LI/LO)</option>
+                <option value="outro">Outro / Não sei</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Conte-nos um pouco sobre sua necessidade</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente o que você precisa regularizar..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-laranja">Enviar solicitação</button>
+            <p style="font-size: 0.75rem; color: #999; margin-top: 12px; text-align: center;">
+              Seus dados estão protegidos. Não enviamos spam.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer section-preto">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="https://cdn.oreateai.com/aiimage/upload/e56803733663fdf1d83c12c8/7f4d18547ba7d1f097648c9f788df5d4.jpg" alt="Caetano Santos" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
+            Caetano Santos
+          </a>
+          <p>Consultoria ambiental especializada em licenciamento, gestão de resíduos, regularização fundiária e projetos de sustentabilidade. Técnica na entrega, humana no atendimento.</p>
+          <div class="social-links" style="margin-top: 20px;">
+            <a href="https://www.linkedin.com/in/caetano-santos/" target="_blank" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">PGRS e PGRSS</a></li>
+            <li><a href="#servicos">Licenciamento Ambiental</a></li>
+            <li><a href="#servicos">Renovação de LO</a></li>
+            <li><a href="#servicos">Tratamento de Efluentes</a></li>
+            <li><a href="#servicos">Cadastro Ambiental Rural</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://wa.me/5575999867956">WhatsApp: (75) 9 9986-7956</a></li>
+            <li><a href="mailto:eng.esaca@gmail.com">eng.esaca@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Caetano Santos — Consultoria Ambiental. Todos os direitos reservados.</p>
+        <p>Registro técnico ativo: CREA</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</a>
+
+  <a href="https://wa.me/5575999867956" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.6 6.32A7.85 7.85 0 0 0 12 4a7.94 7.94 0 0 0-7.94 7.94c0 1.4.36 2.73 1.03 3.94L4 20l4.26-1.12a7.9 7.9 0 0 0 3.74.93 7.94 7.94 0 0 0 7.94-7.94 7.85 7.85 0 0 0-2.34-5.55zM12 17.5a6.5 6.5 0 0 1-3.32-.91l-.24-.14-2.47.65.66-2.4-.16-.25a6.5 6.5 0 0 1 5.53-10.05 6.5 6.5 0 0 1 6.5 6.5 6.5 6.5 0 0 1-6.5 6.5zm3.55-4.85c-.19-.1-1.13-.56-1.31-.62-.17-.07-.3-.1-.43.1-.12.2-.48.62-.59.75-.1.12-.21.14-.4.05-.2-.1-.84-.31-1.6-1-.59-.53-.99-1.18-1.1-1.38-.12-.2 0-.31.09-.41.09-.09.2-.23.29-.35.1-.12.13-.2.19-.33.06-.13.03-.24-.02-.34-.05-.1-.43-1.04-.59-1.42-.16-.37-.31-.32-.43-.33-.12 0-.24 0-.37 0-.13 0-.34.05-.52.24-.17.2-.67.65-.67 1.6 0 .93.68 1.83.77 1.96.1.12 1.33 2.03 3.22 2.85.45.19.8.31 1.07.39.45.14.86.12 1.19.08.36-.05 1.13-.46 1.29-.9.16-.44.16-.82.11-.9-.04-.07-.15-.11-.33-.2z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMobile = document.getElementById('navMobile');
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMobile.classList.toggle('active');
+    });
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navMobile.classList.remove('active'));
+    });
+    document.addEventListener('click', (e) => {
+      if (navMobile.classList.contains('active') && !navMobile.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMobile.classList.remove('active');
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // Fade-in animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 20) {
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+
+    // Hero image slider
+    (function() {
+      const track = document.getElementById('heroSliderTrack');
+      const dots = document.querySelectorAll('.slider-dot');
+      const prevBtn = document.getElementById('sliderPrev');
+      const nextBtn = document.getElementById('sliderNext');
+      const slider = document.getElementById('heroSlider');
+      let current = 0;
+      const total = 4;
+      let autoPlay;
+
+      function goTo(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        current = index;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      prevBtn.addEventListener('click', () => { prev(); resetAutoPlay(); });
+      nextBtn.addEventListener('click', () => { next(); resetAutoPlay(); });
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          goTo(parseInt(dot.dataset.index));
+          resetAutoPlay();
+        });
+      });
+
+      function resetAutoPlay() {
+        clearInterval(autoPlay);
+        autoPlay = setInterval(next, 5000);
+      }
+
+      autoPlay = setInterval(next, 5000);
+
+      if (slider) {
+        slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        slider.addEventListener('mouseleave', () => {
+          autoPlay = setInterval(next, 5000);
+        });
+      }
+
+      // Touch/swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const minSwipeDistance = 40;
+
+      if (slider) {
+        slider.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        slider.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          const diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > minSwipeDistance) {
+            if (diff > 0) { next(); } else { prev(); }
+            resetAutoPlay();
+          }
+        }, { passive: true });
+      }
+    })();
+
+    // Back-to-top button
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
