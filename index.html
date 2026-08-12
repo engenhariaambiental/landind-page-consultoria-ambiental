@@ -1549,69 +1549,166 @@
   }
 </style>
 
+<!-- Estilos visuais do cartão e do botão -->
+<style>
+  .card-formulario {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 32px 28px;
+    max-width: 460px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .card-formulario h2 {
+    color: #0b3c26;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    text-align: left;
+  }
+
+  .card-formulario p.subtitulo {
+    color: #555555;
+    font-size: 14px;
+    margin: 0 0 24px 0;
+    text-align: left;
+  }
+
+  .campo-grupo {
+    margin-bottom: 18px;
+    text-align: left;
+  }
+
+  .campo-grupo label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+
+  .campo-grupo input,
+  .campo-grupo select,
+  .campo-grupo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .campo-grupo input:focus,
+  .campo-grupo select:focus,
+  .campo-grupo textarea:focus {
+    border-color: #f27a18;
+  }
+
+  .campo-grupo textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+
+  .botao-laranja {
+    width: 100%;
+    background-color: #f27a18;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background-color 0.2s;
+  }
+
+  .botao-laranja:hover {
+    background-color: #d9650d;
+  }
+
+  .rodape-privacidade {
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    margin-top: 14px;
+    margin-bottom: 0;
+  }
+</style>
+
 <!-- Estrutura do Formulário -->
-<div class="form-container-card">
+<div class="card-formulario">
+  <h2>Solicitar diagnóstico gratuito</h2>
+  <p class="subtitulo">Preencha os dados abaixo e entraremos em contato.</p>
+
   <form action="https://api.web3forms.com/submit" method="POST">
-    <!-- Sua Chave do Web3Forms -->
+    <!-- CHAVE DE SEGURANÇA (Substitua pela chave que recebeu no e-mail) -->
     <input type="hidden" name="access_key" value="1886bf55-ff54-41c0-9256-2f5332c6adbe" />
     
-    <!-- Assunto do e-mail -->
-    <input type="hidden" name="subject" value="Novo contato pelo site - Consultoria Ambiental" />
-    
-    <!-- Redirecionamento após o envio -->
+    <!-- Configurações adicionais de envio -->
+    <input type="hidden" name="subject" value="Novo Diagnóstico Solicitado - Consultoria Ambiental" />
     <input type="hidden" name="redirect" value="https://engenhariaambiental.github.io/landind-page-consultoria-ambiental/" />
 
-    <!-- Nome completo -->
-    <div class="form-group-item">
+    <!-- Nome Completo -->
+    <div class="campo-grupo">
       <label for="nome">Nome completo</label>
       <input type="text" id="nome" name="Nome" placeholder="Seu nome" required />
     </div>
 
     <!-- WhatsApp / Telefone -->
-    <div class="form-group-item">
+    <div class="campo-grupo">
       <label for="telefone">WhatsApp / Telefone</label>
       <input type="tel" id="telefone" name="Telefone" placeholder="(00) 00000-0000" required />
     </div>
 
-    <!-- E-mail -->
-    <div class="form-group-item">
+    <!-- E-mail do Cliente -->
+    <div class="campo-grupo">
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="Email" placeholder="engenhariaeboa@gmail.com" required />
+      <input type="email" id="email" name="Email" placeholder="seu@email.com" required />
     </div>
 
-    <!-- Tipo de atividade -->
-    <div class="form-group-item">
+    <!-- Tipo de Atividade -->
+    <div class="campo-grupo">
       <label for="atividade">Tipo de atividade</label>
       <select id="atividade" name="Tipo de Atividade" required>
         <option value="" disabled selected>Selecione...</option>
         <option value="Pessoa Física">Pessoa Física</option>
         <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+        <option value="Produtor Rural">Produtor Rural</option>
+        <option value="Indústria / Empresa">Indústria / Empresa</option>
       </select>
     </div>
 
-    <!-- Serviço de interesse -->
-    <div class="form-group-item">
+    <!-- Serviço de Interesse -->
+    <div class="campo-grupo">
       <label for="servico">Serviço de interesse</label>
       <select id="servico" name="Serviço de Interesse" required>
         <option value="" disabled selected>Selecione...</option>
         <option value="Licenciamento Ambiental">Licenciamento Ambiental</option>
-        <option value="Outorga de Água">Outorga de Água</option>
-        <option value="Estudos Ambientais">Estudos Ambientais</option>
-        <option value="Consultoria Geral">Consultoria Geral</option>
+        <option value="Outorga do Uso da Água">Outorga do Uso da Água</option>
+        <option value="Cadastro Ambiental Rural (CAR)">Cadastro Ambiental Rural (CAR)</option>
+        <option value="Estudos e Laudos Ambientais">Estudos e Laudos Ambientais</option>
+        <option value="Consultoria e Regularização Geral">Consultoria e Regularização Geral</option>
       </select>
     </div>
 
     <!-- Necessidade -->
-    <div class="form-group-item">
+    <div class="campo-grupo">
       <label for="mensagem">Conte-nos um pouco sobre sua necessidade</label>
       <textarea id="mensagem" name="Necessidade" placeholder="Descreva brevemente o que você precisa regularizar..."></textarea>
     </div>
 
-    <!-- Botão Laranja -->
-    <button type="submit" class="btn-submit-orange">Enviar solicitação</button>
+    <!-- Botão de Envio -->
+    <button type="submit" class="botao-laranja">Enviar solicitação</button>
 
-    <!-- Nota de Rodapé -->
-    <p class="form-footer-note">Seus dados estão protegidos. Não enviamos spam.</p>
+    <p class="rodape-privacidade">Seus dados estão protegidos. Não enviamos spam.</p>
   </form>
 </div>
           
