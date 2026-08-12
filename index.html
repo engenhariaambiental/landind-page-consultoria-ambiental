@@ -1470,45 +1470,150 @@
           </div>
         </div>
         <div 
-            <form action="https://api.web3forms.com/submit" method="POST">
-  <!-- Sua chave única do Web3Forms -->
-  <input type="hidden" name="access_key" value="1886bf55-ff54-41c0-9256-2f5332c6adbe" />
+            <!-- Formatação CSS do Cartão Branco do Formulário -->
+<style>
+  .form-container-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    font-family: inherit;
+    color: #1a1a1a;
+  }
 
-  <!-- Assunto do e-mail de notificação que você vai receber -->
-  <input type="hidden" name="subject" value="Novo contato pelo site - Consultoria Ambiental" />
+  .form-group-item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
 
-  <!-- Redireciona o visitante de volta para o seu site após clicar em enviar -->
-  <input type="hidden" name="redirect" value="https://engenhariaambiental.github.io/landind-page-consultoria-ambiental/" />
+  .form-group-item label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #222222;
+  }
 
-  <!-- Campos do seu formulário -->
-  <label for="nome">Nome completo</label>
-  <input type="text" id="nome" name="Nome" placeholder="Seu nome" required />
+  .form-group-item input,
+  .form-group-item select,
+  .form-group-item textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #333333;
+    transition: border-color 0.2s ease;
+  }
 
-  <label for="telefone">WhatsApp / Telefone</label>
-  <input type="tel" id="telefone" name="Telefone" placeholder="(00) 00000-0000" required />
+  .form-group-item input:focus,
+  .form-group-item select:focus,
+  .form-group-item textarea:focus {
+    border-color: #f27a18;
+  }
 
-  <label for="email">E-mail</label>
-  <input type="email" id="email" name="Email" placeholder="engenhariaeboa@gmail.com" required />
+  .form-group-item textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
 
-  <label for="atividade">Tipo de atividade</label>
-  <select id="atividade" name="Tipo de Atividade" required>
-    <option value="" disabled selected>Selecione...</option>
-    <option value="Pessoa Física">Pessoa Física</option>
-    <option value="Pessoa Jurídica">Pessoa Jurídica</option>
-  </select>
+  .btn-submit-orange {
+    width: 100%;
+    background-color: #f27a18;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 8px;
+  }
 
-  <label for="servico">Serviço de interesse</label>
-  <select id="servico" name="Serviço de Interesse" required>
-    <option value="" disabled selected>Selecione...</option>
-    <option value="Regularização">Regularização</option>
-    <option value="Consultoria">Consultoria</option>
-  </select>
+  .btn-submit-orange:hover {
+    background-color: #d9690f;
+  }
 
-  <label for="mensagem">Conte-nos um pouco sobre sua necessidade</label>
-  <textarea id="mensagem" name="Necessidade" placeholder="Descreva brevemente..."></textarea>
+  .form-footer-note {
+    text-align: center;
+    font-size: 12px;
+    color: #888888;
+    margin-top: 14px;
+  }
+</style>
 
-  <button type="submit">Enviar solicitação</button>
-</form>
+<!-- Estrutura do Formulário -->
+<div class="form-container-card">
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <!-- Sua Chave do Web3Forms -->
+    <input type="hidden" name="access_key" value="1886bf55-ff54-41c0-9256-2f5332c6adbe" />
+    
+    <!-- Assunto do e-mail -->
+    <input type="hidden" name="subject" value="Novo contato pelo site - Consultoria Ambiental" />
+    
+    <!-- Redirecionamento após o envio -->
+    <input type="hidden" name="redirect" value="https://engenhariaambiental.github.io/landind-page-consultoria-ambiental/" />
+
+    <!-- Nome completo -->
+    <div class="form-group-item">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" name="Nome" placeholder="Seu nome" required />
+    </div>
+
+    <!-- WhatsApp / Telefone -->
+    <div class="form-group-item">
+      <label for="telefone">WhatsApp / Telefone</label>
+      <input type="tel" id="telefone" name="Telefone" placeholder="(00) 00000-0000" required />
+    </div>
+
+    <!-- E-mail -->
+    <div class="form-group-item">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="Email" placeholder="engenhariaeboa@gmail.com" required />
+    </div>
+
+    <!-- Tipo de atividade -->
+    <div class="form-group-item">
+      <label for="atividade">Tipo de atividade</label>
+      <select id="atividade" name="Tipo de Atividade" required>
+        <option value="" disabled selected>Selecione...</option>
+        <option value="Pessoa Física">Pessoa Física</option>
+        <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+      </select>
+    </div>
+
+    <!-- Serviço de interesse -->
+    <div class="form-group-item">
+      <label for="servico">Serviço de interesse</label>
+      <select id="servico" name="Serviço de Interesse" required>
+        <option value="" disabled selected>Selecione...</option>
+        <option value="Licenciamento Ambiental">Licenciamento Ambiental</option>
+        <option value="Outorga de Água">Outorga de Água</option>
+        <option value="Estudos Ambientais">Estudos Ambientais</option>
+        <option value="Consultoria Geral">Consultoria Geral</option>
+      </select>
+    </div>
+
+    <!-- Necessidade -->
+    <div class="form-group-item">
+      <label for="mensagem">Conte-nos um pouco sobre sua necessidade</label>
+      <textarea id="mensagem" name="Necessidade" placeholder="Descreva brevemente o que você precisa regularizar..."></textarea>
+    </div>
+
+    <!-- Botão Laranja -->
+    <button type="submit" class="btn-submit-orange">Enviar solicitação</button>
+
+    <!-- Nota de Rodapé -->
+    <p class="form-footer-note">Seus dados estão protegidos. Não enviamos spam.</p>
+  </form>
+</div>
           
         </div>
       </div>
