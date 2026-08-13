@@ -1137,26 +1137,132 @@
 
   <!-- HEADER -->
   <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-        Caetano Santos - Consultoria Ambiental
-      </a>
-      <nav class="nav-desktop">
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#diferenciais">Diferenciais</a>
-        <a href="#contato" class="btn btn-laranja">Fale com um especialista</a>
-      </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <nav class="nav-mobile" id="navMobile">
-      <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#contato" class="btn btn-laranja">Fale com um especialista</a>
-    </nav>
+    <!-- Importação da fonte moderna idêntica à do logotipo -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .branding-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Imagem 1 (Assinatura CS) com alta definição */
+  .logo-assinatura {
+    height: 60px; /* Tamanho proporcional e nítido */
+    width: auto;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    flex-shrink: 0;
+  }
+
+  /* Divisória discreta opcional para separar a imagem do título */
+  .branding-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #e0e0e0;
+  }
+
+  /* Estrutura do Título da Imagem 2 */
+  .titulo-caetano-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nome-principal {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Capacete de Engenheiro sobre o 'o' do Caetano */
+  .capacete-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #f7a823; /* Amarelo capacete */
+    border-radius: 10px 10px 2px 2px;
+    position: relative;
+    margin: 0 1px;
+    bottom: 2px;
+  }
+  .capacete-icon::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -3px;
+    width: 26px;
+    height: 3px;
+    background-color: #f7a823;
+    border-radius: 2px;
+  }
+
+  /* Folha Broto sobre o 'o' do Santos */
+  .folha-icon {
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    margin-left: -2px;
+    top: -12px;
+  }
+  .folha-icon::before, .folha-icon::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background-color: #3b7a57; /* Verde ambiental */
+    border-radius: 8px 0;
+  }
+  .folha-icon::before {
+    transform: rotate(-30deg);
+  }
+  .folha-icon::after {
+    transform: rotate(30deg);
+    left: 4px;
+  }
+
+  /* Subtítulo Engenheiro Sanitarista e Ambiental */
+  .subtitulo-profisao {
+    font-size: 13px;
+    font-weight: 400;
+    color: #333333;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
+
+  /* Ajuste para telas pequenas (Celulares) */
+  @media (max-width: 580px) {
+    .logo-assinatura { height: 45px; }
+    .nome-principal { font-size: 20px; }
+    .subtitulo-profisao { font-size: 10px; letter-spacing: 0.3px; }
+  }
+</style>
+
+<!-- ESTRUTURA FINAL NO SITE -->
+<div class="branding-container">
+  <!-- Imagem 1 (Assinatura CS) ao lado do título -->
+  <img src="Site/logo1.jpg" alt="Logo CS" class="logo-assinatura" />
+
+  <div class="branding-divider"></div>
+
+  <!-- Título configurado fielmente como a Imagem 2 -->
+  <div class="titulo-caetano-box">
+    <h1 class="nome-principal">
+      Caetan<span class="capacete-icon"></span> Santos<span class="folha-icon"></span>
+    </h1>
+    <p class="subtitulo-profisao">Engenheiro Sanitarista e Ambiental</p>
+  </div>
+</div>
   </header>
 
   <!-- HERO -->
