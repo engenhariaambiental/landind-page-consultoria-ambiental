@@ -1549,7 +1549,7 @@
   }
 </style>
 
-<!-- Estilos visuais do cartão e do botão -->
+<!-- Estilos visuais fiéis ao layout desejado -->
 <style>
   .card-formulario {
     background-color: #ffffff;
@@ -1649,10 +1649,8 @@
   <p class="subtitulo">Preencha os dados abaixo e entraremos em contato.</p>
 
   <form action="https://api.web3forms.com/submit" method="POST">
-    <!-- CHAVE DE SEGURANÇA (Substitua pela chave que recebeu no e-mail) -->
+    <!-- Sua Chave Ativa do Web3Forms -->
     <input type="hidden" name="access_key" value="43503f9c-4da8-4bbc-bcab-8ebdff21f4a8" />
-    
-    <!-- Configurações adicionais de envio -->
     <input type="hidden" name="subject" value="Novo Diagnóstico Solicitado - Consultoria Ambiental" />
     <input type="hidden" name="redirect" value="https://engenhariaambiental.github.io/landind-page-consultoria-ambiental/" />
 
@@ -1668,7 +1666,7 @@
       <input type="tel" id="telefone" name="Telefone" placeholder="(00) 00000-0000" required />
     </div>
 
-    <!-- E-mail do Cliente -->
+    <!-- E-mail -->
     <div class="campo-grupo">
       <label for="email">E-mail</label>
       <input type="email" id="email" name="Email" placeholder="seu@email.com" required />
@@ -1686,20 +1684,23 @@
       </select>
     </div>
 
-    <!-- Serviço de Interesse -->
+    <!-- Serviço de Interesse (Lista Atualizada) -->
     <div class="campo-grupo">
       <label for="servico">Serviço de interesse</label>
       <select id="servico" name="Serviço de Interesse" required>
         <option value="" disabled selected>Selecione...</option>
-        <option value="Licenciamento Ambiental">Licenciamento Ambiental</option>
-        <option value="Outorga do Uso da Água">Outorga do Uso da Água</option>
+        <option value="PGRS — Plano de Gerenciamento de Resíduos Sólidos">PGRS — Plano de Gerenciamento de Resíduos Sólidos</option>
+        <option value="PGRSS — Resíduos de Serviços de Saúde">PGRSS — Resíduos de Serviços de Saúde</option>
+        <option value="Renovação de Licença de Operação (LO)">Renovação de Licença de Operação (LO)</option>
+        <option value="Tratamento de Efluentes">Tratamento de Efluentes</option>
         <option value="Cadastro Ambiental Rural (CAR)">Cadastro Ambiental Rural (CAR)</option>
-        <option value="Estudos e Laudos Ambientais">Estudos e Laudos Ambientais</option>
-        <option value="Consultoria e Regularização Geral">Consultoria e Regularização Geral</option>
+        <option value="Palestras e Workshops de Educação Ambiental">Palestras e Workshops de Educação Ambiental</option>
+        <option value="Mapas Temáticos">Mapas Temáticos</option>
+        <option value="Licenciamento Ambiental (LP, LI, LO)">Licenciamento Ambiental (LP, LI, LO)</option>
       </select>
     </div>
 
-    <!-- Necessidade -->
+    <!-- Mensagem -->
     <div class="campo-grupo">
       <label for="mensagem">Conte-nos um pouco sobre sua necessidade</label>
       <textarea id="mensagem" name="Necessidade" placeholder="Descreva brevemente o que você precisa regularizar..."></textarea>
