@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFHD77S4W0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZFHD77S4W0');
+</script>
   <!-- Ícone que aparece na aba do navegador -->
 <link rel="icon" type="image/jpeg" href="Site/favicon.jpg">
   <meta charset="UTF-8">
@@ -1775,27 +1784,6 @@
   <span>🍃 Visitas ao site: </span>
   <span id="visitas-count">A carregar...</span>
 </div>
-
-<!-- Script de Contagem -->
-<script>
-  function atualizarContadorVisitas() {
-    // Namespace e chave únicos baseados no seu repositório
-    const namespace = "engenhariaambiental-consultoria";
-    const key = "landing-page-visits";
-
-    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("visitas-count").innerText = data.value.toLocaleString('pt-PT');
-      })
-      .catch(error => {
-        console.error("Erro ao carregar o contador:", error);
-        document.getElementById("visitas-count").innerText = "1+";
-      });
-  }
-
-  // Executa a contagem ao carregar a página
-  document.addEventListener("DOMContentLoaded", atualizarContadorVisitas);
 </script>
   </footer>
 
