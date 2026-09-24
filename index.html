@@ -1770,6 +1770,33 @@
        
       </div>
     </div>
+    <!-- Texto Personalizado do Contador -->
+<div style="text-align: center; margin: 15px 0; font-size: 14px; color: #2e7d32; font-weight: bold;">
+  <span>🍃 Visitas ao site: </span>
+  <span id="visitas-count">A carregar...</span>
+</div>
+
+<!-- Script de Contagem -->
+<script>
+  function atualizarContadorVisitas() {
+    // Namespace e chave únicos baseados no seu repositório
+    const namespace = "engenhariaambiental-consultoria";
+    const key = "landing-page-visits";
+
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("visitas-count").innerText = data.value.toLocaleString('pt-PT');
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o contador:", error);
+        document.getElementById("visitas-count").innerText = "1+";
+      });
+  }
+
+  // Executa a contagem ao carregar a página
+  document.addEventListener("DOMContentLoaded", atualizarContadorVisitas);
+</script>
   </footer>
 
   <!-- WHATSAPP FLOAT -->
